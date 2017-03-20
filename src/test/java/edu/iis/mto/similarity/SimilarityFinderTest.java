@@ -31,4 +31,14 @@ public class SimilarityFinderTest {
 		assertThat(sequenceSearcherMocker.getCalls(), is(0));
 	}
 
+	@Test
+	public void calculateJackardSimilaritySameSeq() throws Exception {
+		int[] seq1 = {1,2,3,4,5,10};
+		int[] seq2 = seq1;
+		double result = similarityFinder.calculateJackardSimilarity(seq1, seq2);
+
+		assertThat(result, is(1.0d));
+		assertThat(sequenceSearcherMocker.getCalls(), is(6));
+	}
+
 }
