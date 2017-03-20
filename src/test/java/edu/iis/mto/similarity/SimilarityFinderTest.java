@@ -3,6 +3,7 @@ package edu.iis.mto.similarity;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 /**
@@ -22,7 +23,12 @@ public class SimilarityFinderTest {
 
 	@Test
 	public void calculateJackardSimilarityEmptySeq() throws Exception {
+		int[] seq1 = {};
+		int[] seq2 = {};
+		double result = similarityFinder.calculateJackardSimilarity(seq1, seq2);
 
+		assertThat(result, is(1.0d));
+		assertThat(sequenceSearcherMocker.getCalls(), is(0));
 	}
 
 }
