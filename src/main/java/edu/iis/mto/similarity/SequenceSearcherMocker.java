@@ -10,7 +10,12 @@ import edu.iis.mto.search.SequenceSearcher;
 public class SequenceSearcherMocker implements SequenceSearcher{
 
 	public SearchResult search(int key, int[] seq) {
-		return null;
+		for (int i = 0; i < seq.length; i++) {
+			if (seq[i] == key) {
+				return new SearchResultMocker(true, i);
+			}
+		}
+		return new SearchResultMocker(false);
 	}
 
 }
