@@ -22,7 +22,7 @@ public class SimilarityFinderTest {
 	}
 
 	@Test
-	public void calculateJackardSimilarityEmptySeq() throws Exception {
+	public void calculateJackardSimilarity_emptySeq() throws Exception {
 		int[] seq1 = {};
 		int[] seq2 = {};
 		double result = similarityFinder.calculateJackardSimilarity(seq1, seq2);
@@ -32,7 +32,7 @@ public class SimilarityFinderTest {
 	}
 
 	@Test
-	public void calculateJackardSimilaritySameSeq() throws Exception {
+	public void calculateJackardSimilarity_sameSeq() throws Exception {
 		int[] seq1 = {1,2,3,4,5,10};
 		int[] seq2 = seq1;
 		double result = similarityFinder.calculateJackardSimilarity(seq1, seq2);
@@ -42,7 +42,7 @@ public class SimilarityFinderTest {
 	}
 
 	@Test
-	public void calculateJackardSimilaritySimilarSeqSameLen() throws Exception {
+	public void calculateJackardSimilarity_similarSeqSameLen() throws Exception {
 		int[] seq1 = {1,2,3,4};
 		int[] seq2 = {2,3,4,5};
 		double result = similarityFinder.calculateJackardSimilarity(seq1, seq2);
@@ -52,7 +52,7 @@ public class SimilarityFinderTest {
 	}
 
 	@Test
-	public void calculateJackardSimilaritySimilarSeqDifferentLen() throws Exception {
+	public void calculateJackardSimilarity_similarSeqDifferentLen() throws Exception {
 		int[] seq1 = {1,2,3,4};
 		int[] seq2 = {2,3,4,5,6};
 		double result = similarityFinder.calculateJackardSimilarity(seq1, seq2);
